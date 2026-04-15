@@ -26,6 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -220,10 +221,15 @@
     }
     .nav-wrap {
       display: flex;
-      align-items: center;
+      align-items: center !important;
       gap: 24px;
       width: 100%;
     }
+    
+    .nav-wrap ul{
+      margin-bottom: 0 !important;
+    }
+
     .nav-logo {
       font-family: var(--font-display);
       font-size: 1.6rem;
@@ -343,6 +349,47 @@
     }
     .mobile-lang button.active { background: var(--gold); color: var(--navy); border-color: var(--gold); }
 
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .lang-switcher,
+      .btn.btn-primary {
+        display: none;
+      }
+
+      .nav-wrap {
+        justify-content: space-between;
+      }
+    }
+
+    /* #home {
+      padding-top: 100px;
+    } */
+
+    .section:first-of-type {
+      padding-top: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-right {
+        gap: 8px;
+      }
+
+      .nav-logo {
+        font-size: 1.3rem;
+      }
+    }
+
+    .nav-toggle {
+      margin-left: auto;
+    }
+
     /* ═══════════════════════════════════════════════
        HERO
     ═══════════════════════════════════════════════ */
@@ -381,7 +428,7 @@
       align-items: center;
     }
     .hero-text {
-      max-width: 680px;
+      max-width: 880px;
       color: var(--white);
     }
     .hero-badge {
@@ -1507,7 +1554,7 @@
 
 <!-- ══════════════════════════ LOADER ══════════════════════════ -->
 <div id="loader">
-  <div class="loader-plane">✈️</div>
+  <div class="loader-plane text-white"><i class="fa-solid fa-plane"></i></div>
   <div class="loader-logo">Sanremo<span>Travel</span></div>
   <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
@@ -1574,7 +1621,7 @@
         <h1 class="hero-title" data-key="hero_title">Discover the <span>World's</span> Most Beautiful Destinations</h1>
         <p class="hero-sub" data-key="hero_sub">Your dream vacation is just one click away. Premium tours, luxury hotels, and unforgettable experiences crafted just for you.</p>
         <div class="hero-btns">
-          <a href="#tours" class="btn btn-primary" data-key="hero_btn1">🌍 Explore Tours</a>
+          <a href="#tours" class="btn btn-primary" data-key="hero_btn1"><i class="fa-solid fa-earth-americas"></i> Explore Tours</a>
           <a href="#booking" class="btn btn-outline" data-key="hero_btn2">📞 Free Consultation</a>
         </div>
       </div>
@@ -2352,7 +2399,7 @@
           <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
           <div>
             <div class="contact-item-label" data-key="contact_email_lbl">Email</div>
-            <div class="contact-item-value"><a href="mailto:info@sanremo.uz">info@sanremo.uz</a></div>
+            <div class="contact-item-value"><a href="mailto:sanremotraveluz@mail.ru">sanremotraveluz@mail.ru</a></div>
           </div>
         </div>
         <div class="contact-item">
@@ -2447,7 +2494,7 @@
       <div>
         <div class="footer-heading" data-key="contact_us_lbl">Contact Info</div>
         <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><a href="tel:+998940050808">+998 94 005 08 08</a></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@sanremo.uz">info@sanremo.uz</a></div>
+        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@sanremo.uz">sanremotraveluz@mail.ru</a></div>
         <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span data-key="contact_addr">Tashkent, Yakkasaray district, Abdulla Qahhor street, house 5</span></div>
         <div class="footer-contact-item"><i class="fa-solid fa-clock"></i><span data-key="contact_hours">Mon–Fri: 09:00–18:00</span></div>
         <div style="margin-top:20px;">
@@ -2493,13 +2540,13 @@ const T = {
     hero_badge:'Premium Travel Agency • Tashkent',
     hero_title:'Discover the <span>World\'s</span> Most Beautiful Destinations',
     hero_sub:'Your dream vacation is just one click away. Premium tours, luxury hotels, and unforgettable experiences crafted just for you.',
-    hero_btn1:'🌍 Explore Tours', hero_btn2:'📞 Free Consultation',
+    hero_btn1:'<i class="fa-solid fa-earth-americas"></i> Explore Tours', hero_btn2:'<i class="fa-solid fa-phone"></i> Free Consultation',
     search_dest:'Destination', search_date:'Travel Date', search_budget:'Budget',
     search_dest_ph:'Where to go?', budget_any:'Any budget', search_btn:'Search',
     stat1:'Happy Travelers', stat2:'Tour Packages', stat3:'Countries Covered', stat4:'Years of Experience',
     tours_label:'Our Packages', tours_title:'Explore Our <span>Best Tours</span>',
     tours_sub:'Handpicked destinations and expertly curated itineraries for an unforgettable journey.',
-    from_per_person:'from / person', btn_book_tour:'Book Now', view_all_tours:'🌍 View All Tours',
+    from_per_person:'from / person', btn_book_tour:'Book Now', view_all_tours:'<i class="fa-solid fa-earth-americas"></i> View All Tours',
     badge_popular:'Popular', badge_luxury:'Luxury', badge_exclusive:'Exclusive',
     badge_value:'Best Value', badge_premium:'Premium', badge_new:'New',
     loc_turkey:'Turkey, Antalya', loc_dubai:'UAE, Dubai', loc_maldives:'Maldives',
@@ -2588,7 +2635,7 @@ const T = {
     hero_badge:'Премиум Тур Агентство • Ташкент',
     hero_title:'Откройте для себя <span>Самые Красивые</span> Направления Мира',
     hero_sub:'Ваш отпуск мечты всего в одном клике. Туры класса люкс, первоклассные отели и незабываемые впечатления.',
-    hero_btn1:'🌍 Смотреть туры', hero_btn2:'📞 Бесплатная консультация',
+    hero_btn1:'<i class="fa-solid fa-earth-americas"></i> Смотреть туры', hero_btn2:'<i class="fa-solid fa-phone"></i> Бесплатная консультация',
     search_dest:'Направление', search_date:'Дата поездки', search_budget:'Бюджет',
     search_dest_ph:'Куда едем?', budget_any:'Любой бюджет', search_btn:'Найти',
     stat1:'Довольных туристов', stat2:'Тур-пакетов', stat3:'Охваченных стран', stat4:'Лет опыта',
@@ -2683,7 +2730,7 @@ const T = {
     hero_badge:'Premium Sayohat Agentligi • Toshkent',
     hero_title:'Dunyoning <span>Eng Go\'zal</span> Manzillarini Kashf Eting',
     hero_sub:'Orzu qilgan ta\'tilingiz bir klik uzoqda. Premium turlar, hashamatli mehmonxonalar va unutilmas tajribalar.',
-    hero_btn1:'🌍 Turlarni Ko\'rish', hero_btn2:'📞 Bepul Maslahat',
+    hero_btn1:'<i class="fa-solid fa-earth-americas"></i> Turlarni Ko\'rish', hero_btn2:'<i class="fa-solid fa-phone"></i> Bepul Maslahat',
     search_dest:'Manzil', search_date:'Sayohat sanasi', search_budget:'Byudjet',
     search_dest_ph:'Qayerga bormoqchisiz?', budget_any:'Har qanday byudjet', search_btn:'Qidirish',
     stat1:'Mamnun Sayohatchilar', stat2:'Tur Paketlar', stat3:'Qamrab olingan mamlakatlar', stat4:'Yillik tajriba',
@@ -2968,8 +3015,8 @@ document.querySelectorAll('.flight-tab').forEach(tab => {
 // BOOKING FORM + TELEGRAM
 // ──────────────────────────────────────────────
 // 🔧 CONFIGURE YOUR TELEGRAM BOT HERE:
-const TELEGRAM_BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
-const TELEGRAM_CHAT_ID   = 'YOUR_CHAT_ID_HERE';
+const TELEGRAM_BOT_TOKEN = '8362664872:AAFRRsZJx5NjrTT6vuR1x77Fz2v4gX0tibQ';
+const TELEGRAM_CHAT_ID   = '-1003507982057';
 
 async function submitBooking() {
   const name    = document.getElementById('fName').value.trim();
@@ -2999,15 +3046,29 @@ async function submitBooking() {
     `🕐 _Submitted: ${new Date().toLocaleString('ru-RU')}_`;
 
   // Send to Telegram
-  if (TELEGRAM_BOT_TOKEN !== 'YOUR_BOT_TOKEN_HERE') {
-    try {
-      await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'Markdown' })
-      });
-    } catch(e) { console.error('Telegram send error:', e); }
-  }
+  // if (TELEGRAM_BOT_TOKEN !== '8362664872:AAFRRsZJx5NjrTT6vuR1x77Fz2v4gX0tibQ') {
+  //   try {
+  //     await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+  //       method: 'POST',
+  //       headers: { 'Content-Type': 'application/json' },
+  //       body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'Markdown' })
+  //     });
+  //   } catch(e) { console.error('Telegram send error:', e); }
+  // }
+  // Send to Telegram
+try {
+  await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: TELEGRAM_CHAT_ID,
+      text,
+      parse_mode: 'Markdown'
+    })
+  });
+} catch(e) {
+  console.error('Telegram send error:', e);
+}
 
   // Show success
   document.getElementById('bookingFormEl').style.display = 'none';
